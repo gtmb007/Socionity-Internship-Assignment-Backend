@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,6 +22,7 @@ import com.gautam.service.UserService;
 
 @RestController
 @RequestMapping(value="/socionity")
+@CrossOrigin(origins = "http://localhost:3001")
 public class SocionityAPI {
 	
 	@Autowired
@@ -43,6 +45,7 @@ public class SocionityAPI {
 	@PostMapping(value="/user")
 	public ResponseEntity<String> userSignup(@RequestBody User user) throws Exception {
 		try {
+			System.out.println(user.getUserId()+" "+user.getFirstName()+" "+user.getLastName()+" "+user.getPassword());
 			String userId=userService.addUser(user);
 			String message=environment.getProperty("API.USER_SIGNUP_SUCCESS")+userId;
 			ResponseEntity<String> response=new ResponseEntity<String>(message, HttpStatus.CREATED);
