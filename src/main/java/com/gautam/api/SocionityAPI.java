@@ -22,7 +22,7 @@ import com.gautam.service.UserService;
 
 @RestController
 @RequestMapping(value="/socionity")
-@CrossOrigin(origins = "http://localhost:3001")
+@CrossOrigin(origins = "http://localhost:3000")
 public class SocionityAPI {
 	
 	@Autowired
