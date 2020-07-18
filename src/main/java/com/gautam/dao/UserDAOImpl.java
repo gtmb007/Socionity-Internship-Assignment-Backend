@@ -60,17 +60,19 @@ public class UserDAOImpl implements UserDAO {
 			user.setUserId(userEntity.getUserId());
 			user.setFirstName(userEntity.getFirstName());
 			user.setLastName(userEntity.getLastName());
+			user.setProfileImage(userEntity.getProfileImage());
 		}
 		return user;
 	}
 	
 	@Override
-	public String updateUserName(String userId, String firstName, String lastName) throws Exception {
+	public String updateProfile(String userId, String firstName, String lastName, String profileImage) throws Exception {
 		UserEntity userEntity=entityManager.find(UserEntity.class, userId);
 		String id=null;
 		if(userEntity!=null) {
 			userEntity.setFirstName(firstName);
 			userEntity.setLastName(lastName);
+			userEntity.setProfileImage(profileImage);
 			id=userEntity.getUserId();
 		}
 		return id;

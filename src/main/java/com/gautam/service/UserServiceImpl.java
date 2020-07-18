@@ -45,16 +45,16 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	@Override
-	public String updateUserName(String userId, String firstName, String lastName) throws Exception {
-		String id=userDAO.updateUserName(userId, firstName, lastName);
-		if(id==null) throw new Exception("Service.USERNAME_UPDATION_FAILED");
+	public String updateProfile(String userId, String firstName, String lastName, String profileImage) throws Exception {
+		String id=userDAO.updateProfile(userId, firstName, lastName, profileImage);
+		if(id==null) throw new Exception("Service.USER_NAME_UPDATION_FAILED");
 		return id;
 	}
 	
 	@Override
 	public String updatePassword(String userId, String password) throws Exception {
 		String id=userDAO.updatePassword(userId, password);
-		if(id==null) throw new Exception("Service.USERPASSWORD_UPDATION_FAILED");
+		if(id==null) throw new Exception("Service.USER_PASSWORD_UPDATION_FAILED");
 		return id;
 	}
 	

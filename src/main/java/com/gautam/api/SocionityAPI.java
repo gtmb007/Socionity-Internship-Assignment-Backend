@@ -77,10 +77,10 @@ public class SocionityAPI {
 		}
 	}
 	
-	@PutMapping(value="/user/name/{id}")
-	public ResponseEntity<String> updateUserName(@PathVariable String id, @RequestBody User user) throws Exception {
+	@PutMapping(value="/user/profile/{id}")
+	public ResponseEntity<String> updateProfile(@PathVariable String id, @RequestBody User user) throws Exception {
 		try {
-			String userId=userService.updateUserName(id, user.getFirstName(), user.getLastName());
+			String userId=userService.updateProfile(id, user.getFirstName(), user.getLastName(), user.getProfileImage());
 			String message=environment.getProperty("API.USER_NAME_UPDATED")+userId;
 			ResponseEntity<String> response=new ResponseEntity<String>(message, HttpStatus.CREATED);
 			return response;
@@ -100,6 +100,7 @@ public class SocionityAPI {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, environment.getProperty(e.getMessage()), e);
 		}
 	}
+	
 	
 	@DeleteMapping(value="/user/{id}")
 	public ResponseEntity<String> deleteAccount(@PathVariable String id) throws Exception {

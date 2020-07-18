@@ -1,10 +1,12 @@
 package com.gautam.model;
 
+
 public class User {
 	
 	private String userId;
 	private String firstName;
 	private String lastName;
+	private String profileImage;
 	private String password;
 	
 	public String getUserId() {
@@ -24,6 +26,12 @@ public class User {
 	}
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+	public String getProfileImage() {
+		return profileImage;
+	}
+	public void setProfileImage(String profileImage) {
+		this.profileImage = profileImage;
 	}
 	public String getPassword() {
 		return password;

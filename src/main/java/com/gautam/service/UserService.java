@@ -14,7 +14,7 @@ public interface UserService {
 	
 	public User getUser(String userId) throws Exception;
 	
-	public String updateUserName(String userId, String firstName, String lastName) throws Exception;
+	public String updateProfile(String userId, String firstName, String lastName, String profileImage) throws Exception;
 	
 	public String updatePassword(String userId, String password) throws Exception;
 	

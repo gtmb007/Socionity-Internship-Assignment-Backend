@@ -1,5 +1,6 @@
 package com.gautam.entity;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -18,6 +19,9 @@ public class UserEntity {
 	
 	@Column(name="last_name")
 	private String lastName;
+	
+	@Column(name="profile_image")
+	private String profileImage;
 	
 	@Column(name="password")
 	private String password;
@@ -44,6 +48,14 @@ public class UserEntity {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+
+	public String getProfileImage() {
+		return profileImage;
+	}
+
+	public void setProfileImage(String profileImage) {
+		this.profileImage = profileImage;
 	}
 
 	public String getPassword() {
