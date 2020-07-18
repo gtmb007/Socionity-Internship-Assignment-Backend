@@ -45,7 +45,6 @@ public class SocionityAPI {
 	@PostMapping(value="/user")
 	public ResponseEntity<String> userSignup(@RequestBody User user) throws Exception {
 		try {
-			System.out.println(user.getUserId()+" "+user.getFirstName()+" "+user.getLastName()+" "+user.getPassword());
 			String userId=userService.addUser(user);
 			String message=environment.getProperty("API.USER_SIGNUP_SUCCESS")+userId;
 			ResponseEntity<String> response=new ResponseEntity<String>(message, HttpStatus.CREATED);
