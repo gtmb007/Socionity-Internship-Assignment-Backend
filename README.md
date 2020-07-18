@@ -1,4 +1,7 @@
 # Socionity-Internship-Assignment-Backend
+Display a profile with the profile details of the person who has signed in (name, picture, etc).
+
+# Used Technology - SpringBoot
 
 # Start the project from Scratch
 Go to https://start.spring.io/  generate, extract the downloaded zip file and import it into Eclipse. <br/>
